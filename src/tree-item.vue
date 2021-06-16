@@ -1,7 +1,7 @@
 <template>
     <li role="treeitem"
         :class="classes"
-        :draggable="draggable"
+        :draggable="draggable && !data.dragDisabled"
         @dragstart.stop="onItemDragStart($event, _self, _self.model)"
         @dragend.stop.prevent="onItemDragEnd($event, _self, _self.model)"
         @dragover.stop.prevent="isDragEnter = true"
